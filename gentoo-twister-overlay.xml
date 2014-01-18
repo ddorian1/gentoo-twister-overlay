@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+	<repositories version="1.0">
+		<repo priority="50" quality="experimental" status="unofficial">
+			<name>twister</name>
+			<description lang="en">Unofficial twister overlay</description>
+			<homepage>https://github.com/ddorian1/gentoo-twister-overlay</homepage>
+			<owner type="person">
+				<email>johannes_schwab@gmx.de</email>
+				<name>Johannes Schwab</name>
+			</owner>
+			<source type="git">git://github.com/ddorian1/gentoo-twister-overlay.git</source>
+			<feed>https://github.com/ddorian1/gentoo-twister-overlay/commits/master.atom</feed>
+		</repo>
+	</repositories>
+
