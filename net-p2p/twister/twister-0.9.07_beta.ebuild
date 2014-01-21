@@ -22,16 +22,12 @@ DEPEND="${RDEPEND}"
 S="${WORKDIR}/twister-core-${COMMIT}"
 
 src_configure() {
-	cd "${S}/libtorrent"
-	./bootstrap.sh
-	econf --enable-logging --enable-debug --enable-dht
-
-	cd "${S}"
-	qmake BDB_INCLUDE_PATH=/usr/include/db4.8
+	./autotool.sh
+	./configure
 }
 
 src_prepare() {
-	epatch "${FILESDIR}/${PV}-twister-qt.pro.patch"
+	epatch "${FILESDIR}/${PV}-db.h.patch"
 }
 
 src_compile() {
