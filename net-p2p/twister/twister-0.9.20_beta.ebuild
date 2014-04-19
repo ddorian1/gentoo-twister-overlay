@@ -1,7 +1,7 @@
 EAPI=5
 inherit eutils
 
-COMMIT="adc9e82f3a703920551339ffc4d764849f4a6ecf"
+COMMIT="ad83ba061c0b459e386b007633c12e757ed3c1bf"
 
 DESCRIPTION="Peer-to-peer microblogging"
 HOMEPAGE="http://twister.net.co/"
@@ -22,12 +22,9 @@ DEPEND="${RDEPEND}"
 S="${WORKDIR}/twister-core-${COMMIT}"
 
 src_configure() {
-	./autotool.sh
-	./configure
-}
-
-src_prepare() {
-	epatch "${FILESDIR}/${PV}-db.h.patch"
+	einfo "Generating autotools files..."
+	eautoreconf -fi || die "autoreconf failed"
+	econf
 }
 
 src_compile() {
