@@ -23,8 +23,7 @@ S="${WORKDIR}/twister-core-${COMMIT}"
 
 src_configure() {
 	einfo "Generating autotools files..."
-	eautoreconf -fi || die "autoreconf failed"
-	econf
+	./bootstrap.sh
 }
 
 src_compile() {
