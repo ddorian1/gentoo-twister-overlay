@@ -19,8 +19,6 @@ RDEPEND="dev-libs/openssl
 
 DEPEND="${RDEPEND}"
 
-S="${WORKDIR}/twister-core-${RELEASE}"
-
 src_configure() {
 	./bootstrap.sh
 }
