@@ -5,10 +5,11 @@ A gentoo overlay for twister.
 This overlay fetches the source from github, builds the twisterd and copies it to /usr/bin.
 
 First install layman if you don't have allready:
+
 	# emerge -a layman
 	# echo "source /var/lib/layman/make.conf" >> /etc/portage/make.conf
 
-	(See http://wiki.gentoo.org/wiki/Layman for further instructions.)
+(See http://wiki.gentoo.org/wiki/Layman for further instructions.)
 
 Then you can activate the overlay with:
 	

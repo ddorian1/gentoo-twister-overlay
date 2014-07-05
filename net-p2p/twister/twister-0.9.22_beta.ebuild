@@ -1,11 +1,11 @@
 EAPI=5
 inherit eutils
 
-RELEASE="v0.9.22"
+RELEASE="0.9.22"
 
 DESCRIPTION="Peer-to-peer microblogging"
 HOMEPAGE="http://twister.net.co/"
-SRC_URI="https://github.com/miguelfreitas/twister-core/archive/${RELEASE}.tar.gz"
+SRC_URI="https://github.com/miguelfreitas/twister-core/archive/v${RELEASE}.tar.gz"
 RESTRICT="mirror"
 
 LICENSE="MIT BSD"
@@ -18,6 +18,8 @@ RDEPEND="dev-libs/openssl
 	net-libs/miniupnpc"
 
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/twister-core-${RELEASE}"
 
 src_configure() {
 	./bootstrap.sh
