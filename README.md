@@ -10,9 +10,9 @@ First install layman if you don't have allready:
 
 	(See http://wiki.gentoo.org/wiki/Layman for further instructions.)
 
-Then you can add the overlay to portage with:
+Then you can activate the overlay with:
 	
-	# layman -o https://raw.github.com/ddorian1/gentoo-twister-overlay/master/gentoo-twister-overlay.xml -f -a twister
+	# layman -a twister
 
 And install twister (and dependencies) with:
 
