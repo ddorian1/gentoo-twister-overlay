@@ -12,7 +12,7 @@ LICENSE="MIT BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND="dev-libs/openssl
+RDEPEND="dev-libs/openssl[-bindist]
 	sys-libs/db
 	dev-libs/boost
 	net-libs/miniupnpc"
