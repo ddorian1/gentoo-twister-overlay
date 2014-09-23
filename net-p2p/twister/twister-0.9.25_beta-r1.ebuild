@@ -30,6 +30,20 @@ src_compile() {
 }
 
 src_install() {
-	mkdir -p "${D}usr/bin/"
-	cp "${S}/twisterd" "${D}usr/bin/twisterd"
+	dodir "/usr/bin/"
+
+	exeinto "/usr/bin"
+	doexe "${S}/twisterd" 
+	doexe "${FILESDIR}/twister-html-install"
+	doexe "${FILESDIR}/twister-html-update"
+
+	dodoc "${S}/README.md"
+}
+
+pkg_postinst() {
+	elog "Befor running twister, each user must set up twister's HTML files"
+	elog "in ~/.twister/html and the configs in ~/.twister/twister.conf."
+	elog "You can do this by running twister-html-install."
+	elog ""
+	elog "To keep the HTML files up to date, run twister-html-update."
 }
