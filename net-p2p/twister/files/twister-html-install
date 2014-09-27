@@ -18,7 +18,6 @@ error() {
 
 if test -e ${twisterFolder}
 then
-	echo ""
 	echo "\"${twisterFolder}\" already exists."
 	echo "If you want to update twister's HTML files,"
 	echo "please run twister-html-update."
