@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-libs/openssl[-bindist]
-	sys-libs/db
+	sys-libs/db:4.8
 	dev-libs/boost
 	net-libs/miniupnpc"
 
