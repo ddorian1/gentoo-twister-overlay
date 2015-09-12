@@ -1,7 +1,7 @@
 EAPI=5
 inherit eutils
 
-COMMIT="b8e264f4d13354e9ae2bd387dfed7ea137a83424"
+COMMIT="73dc8acc721dad039f05806929523967391edee8"
 
 DESCRIPTION="Peer-to-peer microblogging"
 HOMEPAGE="http://twister.net.co/"
@@ -11,11 +11,13 @@ RESTRICT="mirror"
 LICENSE="MIT BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE="tk"
 
-RDEPEND="dev-libs/openssl[-bindist]
+RDEPEND="dev-libs/openssl:*[-bindist]
 	sys-libs/db:4.8
 	dev-libs/boost
-	net-libs/miniupnpc"
+	net-libs/miniupnpc
+	tk? ( || ( dev-lang/python:2.7[tk] dev-lang/python:2.6[tk] ) )"
 
 DEPEND="${RDEPEND}"
 
@@ -30,14 +32,14 @@ src_compile() {
 }
 
 src_install() {
-	dodir "/usr/bin/"
+	einstall
 
-	exeinto "/usr/bin"
-	doexe "${S}/twisterd" 
+	use tk || rm -f "${D}/usr/bin/twister-control"
+	use tk || rm -f "${D}/usr/share/applications/twister-control.desktop"
+
+	exeinto "/usr/bin/"
 	doexe "${FILESDIR}/twister-html-install"
 	doexe "${FILESDIR}/twister-html-update"
-
-	dodoc "${S}/README.md"
 }
 
 pkg_postinst() {
