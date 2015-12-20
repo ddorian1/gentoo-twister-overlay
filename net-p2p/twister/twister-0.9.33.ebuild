@@ -1,11 +1,10 @@
 EAPI=5
 inherit eutils
 
-COMMIT="73dc8acc721dad039f05806929523967391edee8"
 
 DESCRIPTION="Peer-to-peer microblogging"
 HOMEPAGE="http://twister.net.co/"
-SRC_URI="https://github.com/miguelfreitas/twister-core/archive/${COMMIT}.tar.gz"
+SRC_URI="https://github.com/miguelfreitas/twister-core/archive/v${PV}.tar.gz -> ${PF}.tar.gz"
 RESTRICT="mirror"
 
 LICENSE="MIT BSD"
@@ -21,7 +20,7 @@ RDEPEND="dev-libs/openssl:*[-bindist]
 
 DEPEND="${RDEPEND}"
 
-S="${WORKDIR}/twister-core-${COMMIT}"
+S="${WORKDIR}/twister-core-${PV}"
 
 src_configure() {
 	./bootstrap.sh
