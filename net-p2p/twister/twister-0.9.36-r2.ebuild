@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="tk"
 
 RDEPEND="dev-libs/openssl:*[-bindist]
-	>=sys-libs/db-4.8
+	sys-libs/db:4.8
 	dev-libs/boost:0/1.56.0
 	net-libs/miniupnpc
 	tk? ( || ( dev-lang/python:2.7[tk] dev-lang/python:2.6[tk] ) )"
