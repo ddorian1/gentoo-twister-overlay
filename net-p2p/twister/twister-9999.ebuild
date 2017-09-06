@@ -33,7 +33,7 @@ src_install() {
 	rm -f "${D}/usr/share/applications/mimeinfo.cache"
 	use tk || rm -fr "${D}/usr/share/pixmaps"
 	use tk || rm -f "${D}/usr/bin/twister-control"
-	use tk || rm -f "${D}/usr/share/applications/twister.desktop"
+	use tk || rm -fr "${D}/usr/share/applications"
 
 	exeinto "/usr/bin/"
 	doexe "${FILESDIR}/twister-html-install"

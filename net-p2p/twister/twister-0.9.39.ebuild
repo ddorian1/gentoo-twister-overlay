@@ -1,7 +1,7 @@
 EAPI=5
 inherit eutils
 
-COMMIT="54b1d9e9a3865462257944f5010abd6d42ea28bd"
+COMMIT="6b157f10c05f22a1999551746f9dd40980019bce"
 
 DESCRIPTION="Peer-to-peer microblogging"
 HOMEPAGE="http://twister.net.co/"
